@@ -1,0 +1,17 @@
+[user]
+    name = Cinar Ozkan
+    email = me@cinarozkan.com
+
+[core]
+    editor = nano
+    autocrlf = input
+    pager = less
+
+[color]
+    ui = auto
+
+[init]
+    defaultBranch = main
+
+[push]
+    default = simple

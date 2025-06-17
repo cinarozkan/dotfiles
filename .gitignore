@@ -1,0 +1,17 @@
+# Ignores every empty folder
+
+dolphin/.config/
+kactivitymanagerd/.local/share/
+kate/.config/
+kde5/.config/
+kde/.config/kdeglobals/
+kdeglobals/.config/
+kdenlive/.config/
+khotkeysrc/.config/
+krunnerrc/.config/
+kwin/.config/
+kwinrc/.config/
+okular/.config/
+plasmarc/.config/
+plasmashell/.config/
+plasma-workspace/.local/share/

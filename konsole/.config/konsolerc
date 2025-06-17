@@ -1,0 +1,11 @@
+[Desktop Entry]
+DefaultProfile=PowerLevel10k.profile
+
+[General]
+ConfigVersion=1
+
+[Notification Messages]
+CloseAllEmptyTabs=false
+
+[UiSettings]
+ColorScheme=
