@@ -1,6 +1,10 @@
 #!/bin/bash
 
-# Fast Dotfiles Installation Script using GNU Stow
+# Dotfiles Installation Script
+# This script installs dotfiles from the current directory using GNU Stow
+
+#Thanks to Popr4x for minimal optimization
+
 
 set -e
 
@@ -11,8 +15,10 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-echo -e "${BLUE}=== Dotfiles Installation Script ===${NC}\n"
-echo "(optimized by Poprex)"
+echo -e "${BLUE}======================================${NC}\n"
+echo -e "${BLUE}==== Dotfiles Installation Script ====${NC}\n"
+echo -e "${BLUE}======================================${NC}\n"
+
 echo "This script installs your dotfiles using GNU Stow."
 echo -e "${YELLOW}Make sure GNU Stow is installed.${NC}\n"
 
@@ -22,10 +28,15 @@ if [[ $REPLY =~ ^[Nn]$ ]]; then
     exit 0
 fi
 
-# Check for stow
+# Check if GNU Stow is installed
 if ! command -v stow &>/dev/null; then
     echo -e "${RED}Error: GNU Stow is not installed!${NC}"
-    echo "Install it using your package manager."
+    echo "Please install stow first using your desired package manager:"
+    echo "  Ubuntu/Debian: sudo apt install stow"
+    echo "  macOS: brew install stow"
+    echo "  Arch Linux: sudo pacman -S stow"
+    echo "  Fedora: sudo dnf install stow"
+    echo "  OpenSUSE: sudo zypper install stow"
     exit 1
 fi
 echo -e "${GREEN}✓ GNU Stow found${NC}\n"
@@ -33,7 +44,6 @@ echo -e "${GREEN}✓ GNU Stow found${NC}\n"
 DOTFILES_DIR="$(pwd)"
 echo -e "${BLUE}Installing from: $DOTFILES_DIR${NC}\n"
 
-# Initialize status arrays
 failed_packages=()
 conflict_packages=()
 
@@ -63,7 +73,7 @@ done
 
 echo -e "\n${GREEN}=== Initial Installation Complete ===${NC}\n"
 
-# Handle conflicts
+# Handle conflicts by overwriting
 if [ ${#conflict_packages[@]} -gt 0 ]; then
     echo -e "${YELLOW}Conflicts detected in:${NC}"
     for pkg in "${conflict_packages[@]}"; do echo "  - $pkg"; done
@@ -96,4 +106,6 @@ else
     echo -e "\nTry resolving manually and run:\n  stow <package-name>"
 fi
 
-echo -e "\n${BLUE}Dotfiles installation complete.${NC}"
+echo ""
+echo "Your dotfiles have been installed using GNU Stow."
+echo "Symbolic links have been created in your home directory."
