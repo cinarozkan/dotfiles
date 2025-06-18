@@ -1,11 +1,11 @@
-[user]
-	name = Çınar Özkan
-	email = me@cinarozkan.com
 
 [core]
     editor = nano
     autocrlf = input
     pager = less
+
+[alias]
+    lg = log --oneline --graph --decorate
 
 [color]
     ui = auto
@@ -15,3 +15,6 @@
 
 [push]
     default = simple
+
+[include]
+    path = ~/.gitconfig.local
