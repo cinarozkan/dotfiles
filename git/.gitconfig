@@ -1,6 +1,6 @@
 [user]
-    name = Cinar Ozkan
-    email = me@cinarozkan.com
+	name = Çınar Özkan
+	email = me@cinarozkan.com
 
 [core]
     editor = nano
@@ -11,7 +11,7 @@
     ui = auto
 
 [init]
-    defaultBranch = main
+	defaultBranch = main
 
 [push]
     default = simple
