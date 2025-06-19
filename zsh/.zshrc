@@ -61,9 +61,15 @@ alias pacman.conf='nano /etc/pacman.conf'
 alias zshrc='kate ~/.zshrc'
 alias cat='bat --paging=never'
 alias ls='eza -x --icons -a'
+alias nv=nvim
 
 # ➤ Görsel bilgi
 neofetch
 
 # ➤ Powerlevel10k sessiz instant prompt
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+if command -v zoxide > /dev/null; then
+  eval "$(zoxide init zsh)"
+fi
+
+

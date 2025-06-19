@@ -1,4 +1,4 @@
-# Ignores every empty folder
+# Generated automatically, ignores every empty folder
 
 dolphin/.config/
 kactivitymanagerd/.local/share/
@@ -15,3 +15,5 @@ okular/.config/
 plasmarc/.config/
 plasmashell/.config/
 plasma-workspace/.local/share/
+generate-gitignore.sh
+.git/refs/tags/
