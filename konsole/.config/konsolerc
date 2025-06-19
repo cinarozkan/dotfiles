@@ -6,6 +6,8 @@ ConfigVersion=1
 
 [Notification Messages]
 CloseAllEmptyTabs=false
+CloseAllTabs=true
+CloseSingleTab=true
 
 [UiSettings]
 ColorScheme=
