@@ -62,6 +62,7 @@ alias zshrc='kate ~/.zshrc'
 alias cat='bat --paging=never'
 alias ls='eza -x --icons -a'
 alias nv=nvim
+alias calc='python3 -q'
 
 # ➤ Görsel bilgi
 neofetch
