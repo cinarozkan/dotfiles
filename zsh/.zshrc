@@ -53,6 +53,11 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_VERIFY
 setopt AUTO_CD
 
+export QT_QPA_PLATFORM=wayland
+export QT_QPA_PLATFORMTHEME=qt5ct
+export MOZ_ENABLE_WAYLAND=1
+export XDG_SESSION_TYPE=wayland
+
 # ➤ Aliaslar
 alias ZSH='source ~/.zshrc'
 alias la='ls -a'
