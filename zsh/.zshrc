@@ -68,6 +68,7 @@ alias cat='bat --paging=never'
 alias ls='eza -x --icons -a'
 alias nv=nvim
 alias calc='python3 -q'
+alias konsave='cd ~/KonUI && ./launch.sh'
 
 # ➤ Görsel bilgi
 neofetch
