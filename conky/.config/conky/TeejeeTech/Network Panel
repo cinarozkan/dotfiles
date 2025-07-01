@@ -54,8 +54,8 @@ color2 FFA300
 color3 grey
 
 TEXT
-${color2}Download ${color0}${alignr}${downspeedf eth0} KiB/s
-${downspeedgraph eth0 80,}
-${color2}Upload ${color0}${alignr}${upspeedf eth0} KiB/s 
-${upspeedgraph eth0 80,} 
+${color2}Download ${color0}${alignr}${downspeedf enp12s0} KiB/s
+${downspeedgraph enp12s0 80,}
+${color2}Upload ${color0}${alignr}${upspeedf enp12s0} KiB/s
+${upspeedgraph enp12s0 80,}
 ${color2}Local IP${color0}${alignr}${addr enp12s0}

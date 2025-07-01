@@ -23,6 +23,16 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND='fd --type d'
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
 
+# ➤ FZF Theme, edit this directly by going to this link: https://vitormv.github.io/fzf-themes#eyJib3JkZXJTdHlsZSI6InJvdW5kZWQiLCJib3JkZXJMYWJlbCI6IkZaRiBGdXp6eSBGaW5kZXIg75KJIiwiYm9yZGVyTGFiZWxQb3NpdGlvbiI6MCwicHJldmlld0JvcmRlclN0eWxlIjoicm91bmRlZCIsInBhZGRpbmciOiIwIiwibWFyZ2luIjoiMCIsInByb21wdCI6Ij4gIiwibWFya2VyIjoiPiIsInBvaW50ZXIiOiLil4YiLCJzZXBhcmF0b3IiOiI9Iiwic2Nyb2xsYmFyIjoifCIsImxheW91dCI6ImRlZmF1bHQiLCJpbmZvIjoiZGVmYXVsdCIsImNvbG9ycyI6ImZnOiNkMGQwZDAsZmcrOiNkMGQwZDAsYmc6IzEyMTIxMixiZys6IzI2MjYyNixobDojYmE2YzI0LGhsKzojNWZkN2ZmLGluZm86I2FmYWY4NyxtYXJrZXI6Izg3ZmYwMCxwcm9tcHQ6I2ZmMDAwMCxzcGlubmVyOiMxOTAwZmYscG9pbnRlcjojMTkwMGZmLGhlYWRlcjojMTM4ZThlLGJvcmRlcjojMjYyNjI2LGxhYmVsOiNhZWFlYWUscXVlcnk6I2Q5ZDlkOSJ9
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+  --color=fg:#d0d0d0,fg+:#d0d0d0,bg:#121212,bg+:#262626
+  --color=hl:#ba6c24,hl+:#5fd7ff,info:#afaf87,marker:#87ff00
+  --color=prompt:#ff0000,spinner:#1900ff,pointer:#1900ff,header:#138e8e
+  --color=border:#262626,label:#aeaeae,query:#d9d9d9
+  --border="rounded" --border-label="FZF Fuzzy Finder " --border-label-pos="0" --preview-window="border-rounded"
+  --prompt="> " --marker=">" --pointer="◆" --separator="="
+  --scrollbar="|"'
+
 bindkey '^T' fzf-file-widget
 bindkey '^[c' fzf-cd-widget
 
@@ -80,3 +90,21 @@ if command -v zoxide > /dev/null; then
 fi
 
 
+
+# Shell Sage Hook
+shell_sage_prompt() {
+    local EXIT=$?
+    local CMD=$(fc -ln -1 | awk '{$1=$1}1' | sed 's/\/\\/g')
+    [ $EXIT -ne 0 ] && shellsage run --analyze "$CMD" --exit-code $EXIT
+    history -s "$CMD"  # Force into session history
+}
+PROMPT_COMMAND="shell_sage_prompt"
+
+# Shell Sage Hook
+shell_sage_prompt() {
+    local EXIT=$?
+    local CMD=$(fc -ln -1 | awk '{$1=$1}1' | sed 's/\/\\/g')
+    [ $EXIT -ne 0 ] && shellsage run --analyze "$CMD" --exit-code $EXIT
+    history -s "$CMD"  # Force into session history
+}
+PROMPT_COMMAND="shell_sage_prompt"
