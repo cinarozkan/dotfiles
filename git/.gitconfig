@@ -1,6 +1,6 @@
 
 [core]
-    editor = nano
+    editor = nvim
     autocrlf = input
     pager = less
 
