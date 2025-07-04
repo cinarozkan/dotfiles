@@ -20,7 +20,7 @@ draw_graph_borders yes
 draw_outline no
 draw_shades no
 
-gap_x 15
+gap_x 17
 gap_y 210
 net_avg_samples 2
 no_buffers yes

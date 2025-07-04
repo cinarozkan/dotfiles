@@ -2,6 +2,7 @@
 
 # Dotfiles Installation Script
 # This script installs dotfiles from the current directory using GNU Stow
+# This script will not get everything working immediately, further configuration may be needed for some packages.
 
 #Thanks to Popr4x for minimal optimization
 
@@ -20,6 +21,8 @@ echo -e "${BLUE}==== Dotfiles Installation Script ====${NC}\n"
 echo -e "${BLUE}======================================${NC}\n"
 
 echo "This script installs your dotfiles using GNU Stow."
+echo -e "${GREEN}This script will not get everything working immediately, further configuration may be needed for some packages.${NC}\n"
+
 echo -e "${YELLOW}Make sure GNU Stow is installed.${NC}\n"
 
 read -p "Do you want to continue? [Y/n]: " -n 1 -r
@@ -51,7 +54,7 @@ conflict_packages=()
 packages=()
 for dir in */; do
     dir=${dir%/}
-    [[ "$dir" =~ ^(\.|scripts|docs|README) ]] && continue
+    [[ "$dir" =~ ^(\.git|wallpapers)$ ]] && continue
     [[ -d "$dir" ]] && packages+=("$dir")
 done
 
@@ -108,4 +111,4 @@ fi
 
 echo ""
 echo "Your dotfiles have been installed using GNU Stow."
-echo "Symbolic links have been created in your home directory."
+echo "Symbolic links have been created in the right places."
