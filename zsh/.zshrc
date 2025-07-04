@@ -1,3 +1,6 @@
+# ➤ Skip if not running interactively.
+[[ $- != *i* ]] && return
+
 # ➤ Powerlevel10k Instant Prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -80,18 +83,13 @@ alias nv=nvim
 alias calc='python3 -q'
 alias konsave='cd ~/KonUI && ./launch.sh'
 
-# ➤ Görsel bilgi
-neofetch
-
-# ➤ Powerlevel10k sessiz instant prompt
+# ➤ Powerlevel10k quiet instant prompt
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 if command -v zoxide > /dev/null; then
   eval "$(zoxide init zsh)"
 fi
 
-
-
-# Shell Sage Hook
+# ➤ Shell Sage Hook
 shell_sage_prompt() {
     local EXIT=$?
     local CMD=$(fc -ln -1 | awk '{$1=$1}1' | sed 's/\/\\/g')
@@ -100,11 +98,14 @@ shell_sage_prompt() {
 }
 PROMPT_COMMAND="shell_sage_prompt"
 
-# Shell Sage Hook
-shell_sage_prompt() {
-    local EXIT=$?
-    local CMD=$(fc -ln -1 | awk '{$1=$1}1' | sed 's/\/\\/g')
-    [ $EXIT -ne 0 ] && shellsage run --analyze "$CMD" --exit-code $EXIT
-    history -s "$CMD"  # Force into session history
+# ➤ Shellsage alias for help
+function help() {
+    if [[ -z "$VIRTUAL_ENV" || "$VIRTUAL_ENV" != *shellsage_env* ]]; then
+        source ~/Terminal_assistant/shellsage_env/bin/activate
+    fi
+
+    shellsage ask "$@"
 }
-PROMPT_COMMAND="shell_sage_prompt"
+
+# ➤ Display neofetch on startup
+neofetch
