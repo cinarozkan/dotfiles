@@ -1,20 +1,22 @@
 
 [core]
-    editor = nvim
-    autocrlf = input
-    pager = less
+  editor = nvim
+  autocrlf = input
+  pager = less
 
 [alias]
-    lg = log --oneline --graph --decorate
+  lg = log --oneline --graph --decorate
+	st = status
 
 [color]
-    ui = auto
+  ui = auto
 
 [init]
-	defaultBranch = main
+  defaultBranch = main
 
 [push]
-    default = simple
+  default = simple
 
 [include]
-    path = ~/.gitconfig.local
+  path = ~/.gitconfig.local
+
