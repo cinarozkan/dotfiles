@@ -19,7 +19,7 @@ cd ~/dotfiles && ./install-dotfiles.sh
 ```
 
 
-## Getting my KDE Plasma rice
+## Getting my KDE Plasma Rice
 
 To get my KDE Plasma rice, first install **[konsave](https://github.com/Prayag2/konsave)** (I also suggest checking out **[KonUI](https://github.com/TheUruz/KonUI)**) from AUR or with pip, then import the latest `.knsv` file from the **releases** of this repository as a profile.
 ```bash
