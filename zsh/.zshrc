@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# ➤Powerlevel10k Prompt
+# ➤ Powerlevel10k Prompt
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
@@ -16,11 +16,14 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /home/cinar/zsh-auto-notify/auto-notify.plugin.zsh
 source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
 
+# ➤ ZSH Auto Notify settings
+export AUTO_NOTIFY_THRESHOLD=4.9
+export AUTO_NOTIFY_EXCLUDE="" # Commands that shouldn't send notifications
+export AUTO_NOTIFY_TITLE="''%command'' Komudu Tamamlandı ✅"
+
 # FZF ayarları
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
-
-# FZF ayarları
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND='fd --type d'
@@ -83,6 +86,7 @@ alias nv=nvim
 alias calc='python3 -q'
 alias konsave='cd ~/KonUI && ./launch.sh'
 alias q=exit
+alias shut='sudo poweroff'
 
 # ➤ Powerlevel10k quiet instant prompt
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
@@ -107,6 +111,7 @@ function help() {
 
     shellsage ask "$@"
 }
+
 
 # ➤ Display neofetch on startup
 neofetch
