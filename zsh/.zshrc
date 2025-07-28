@@ -87,6 +87,7 @@ alias calc='python3 -q'
 alias konsave='cd ~/KonUI && ./launch.sh'
 alias q=exit
 alias shut='sudo poweroff'
+alias dolphin='dolphin .'
 
 # ➤ Powerlevel10k quiet instant prompt
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
