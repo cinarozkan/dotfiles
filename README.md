@@ -38,6 +38,6 @@ After that, set your wallpapers manually from the `wallpapers` directory.
 ## Notes
 
 - Some config files may need additional steps after being installed for them to actually work (for example, rofi and conky).  
-- This repository does not automatically install the `pacman.conf`, If you want to use it, copy it to `/etc/pacman.conf`. You may also need to set up some extra repositories like chaotic-aur manually if you use them.
-- This repository is designed with Arch Linux in mind, but most things should work on other Linux distributions too.
+- This repository does not automatically install the `pacman.conf`, If you want to use it, copy it to `/etc/pacman.conf`. You may also need to set up some extra repositories like chaotic-aur manually if you wish use them.
+- This repository is designed with Arch Linux in mind, but most things should work on other Linux distributions (and MacOS) too.
 
