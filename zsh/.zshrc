@@ -7,13 +7,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # ➤ Powerlevel10k Prompt
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 # ➤ Eklentiler
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /home/cinar/zsh-auto-notify/auto-notify.plugin.zsh
+#source /usr/share/zsh/plugins/zsh-auto-notify/auto-notify.plugin.zsh
 source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
 
 # ➤ ZSH Auto Notify settings
@@ -44,7 +45,7 @@ bindkey '^[c' fzf-cd-widget
 
 # ➤ Tab Completion Sistemi
 autoload -U compinit; compinit
-source ~/fzf-tab/fzf-tab.plugin.zsh
+source /usr/share/zsh/plugins/fzf-tab-git/fzf-tab.plugin.zsh
 export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
 export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git --max-depth 1'
 
@@ -88,6 +89,7 @@ alias konsave='cd ~/KonUI && ./launch.sh'
 alias q=exit
 alias shut='sudo poweroff'
 alias dolphin='dolphin .'
+alias nvidia-temp='nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader'
 
 # ➤ Powerlevel10k quiet instant prompt
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
