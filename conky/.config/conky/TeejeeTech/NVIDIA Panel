@@ -19,8 +19,8 @@ draw_graph_borders yes
 draw_outline no
 draw_shades no
 
-gap_x 850
-gap_y 40
+gap_x 15
+gap_y 100
 net_avg_samples 2
 no_buffers yes
 out_to_console no
@@ -35,7 +35,7 @@ own_window_argb_visual yes
 own_window_argb_value 51
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 
-minimum_size 200 220
+minimum_size 180 120
 
 stippled_borders 0
 update_interval 1.0
@@ -55,9 +55,9 @@ color2 FFA300
 color3 grey
 
 TEXT
-${color2}GPU Temp ${alignr}${color0}${nvidia temp} °C
-${color2}Fan Speed ${alignr}${color0}${execi 5 nvidia-settings -q [fan:0]/GPUCurrentFanSpeed -t} %
-${color2}GPU Clock ${alignr}${color0}${nvidia gpufreq} MHz
-${color2}Mem Clock ${alignr}${color0}${nvidia memfreq} MHz
-${color2}Mem Used ${alignr}${color0}${execi 5 nvidia-settings -q [gpu:0]/UsedDedicatedGPUMemory -t} / ${exec nvidia-settings -q [gpu:0]/TotalDedicatedGPUMemory -t} MiB
+${color2}GPU Temp ${alignr}${color0}${execi 1 nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader} °C
+${color2}Fan Speed ${alignr}${color0}${execi 1 nvidia-settings -q [fan:0]/GPUCurrentFanSpeed -t} %
+${color2}GPU Clock ${alignr}${color0}${execi 1 nvidia-smi --query-gpu=clocks.gr --format=csv,noheader,nounits} MHz
+${color2}Mem Clock ${alignr}${color0}${execi 1 nvidia-smi --query-gpu=clocks.mem --format=csv,noheader,nounits} MHz
+${color2}Mem Used ${alignr}${color0}${execi 1 nvidia-settings -q [gpu:0]/UsedDedicatedGPUMemory -q [gpu:0]/TotalDedicatedGPUMemory -t | awk 'NR==1{used=$1} NR==2{printf "%.0f%%", used/$1*100}'}
 ${image ./nvidia.png -p 0,90 -s 200x132}
