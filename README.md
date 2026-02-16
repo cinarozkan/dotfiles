@@ -10,7 +10,6 @@ All of my config files for my Arch Linux setup with KDE Plasma. This repository 
 - rofi
 - wallpapers
 - zsh
-- pacman.conf
 
 Clone the repository to `~/dotfiles` and run the `install-dotfiles.sh` script to automatically install all the dotfiles using GNU Stow.
 ```bash
@@ -19,7 +18,7 @@ cd ~/dotfiles && ./install-dotfiles.sh
 ```
 
 
-## Getting my KDE Plasma Rice
+## Getting my KDE Plasma Desktop
 
 To get my KDE Plasma rice, first install **[konsave](https://github.com/Prayag2/konsave)** (I also suggest checking out **[KonUI](https://github.com/TheUruz/KonUI)**) from AUR or with pip, then import the latest `.knsv` file from the **releases** of this repository as a profile.
 ```bash
