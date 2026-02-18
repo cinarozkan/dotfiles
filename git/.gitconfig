@@ -19,3 +19,9 @@
 
 [include]
   path = ~/.gitconfig.local
+[gpg]
+	format = ssh
+[user]
+	signingkey = /home/cinar/.ssh/id_ed25519.pub
+[commit]
+	gpgsign = true

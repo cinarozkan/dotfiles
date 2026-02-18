@@ -90,6 +90,8 @@ alias q=exit
 alias shut='sudo poweroff'
 alias dolphin='dolphin .'
 alias nvidia-temp='nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader'
+alias update-count="~/dotfiles/conky/.config/conky/'Main Panel'/assets/check_updates.sh"
+alias history="fzf-history-widget"
 
 # ➤ Powerlevel10k quiet instant prompt
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
