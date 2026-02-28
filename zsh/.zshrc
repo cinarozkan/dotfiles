@@ -100,23 +100,22 @@ if command -v zoxide > /dev/null; then
 fi
 
 # ➤ Shell Sage Hook
-shell_sage_prompt() {
-    local EXIT=$?
-    local CMD=$(fc -ln -1 | awk '{$1=$1}1' | sed 's/\/\\/g')
-    [ $EXIT -ne 0 ] && shellsage run --analyze "$CMD" --exit-code $EXIT
-    history -s "$CMD"  # Force into session history
-}
-PROMPT_COMMAND="shell_sage_prompt"
-
+#shell_sage_prompt() {
+#    local EXIT=$?
+#    local CMD=$(fc -ln -1 | awk '{$1=$1}1' | sed 's/\/\\/g')
+#    [ $EXIT -ne 0 ] && shellsage run --analyze "$CMD" --exit-code $EXIT
+#    history -s "$CMD"  # Force into session history
+#}
+#PROMPT_COMMAND="shell_sage_prompt"
+#
 # ➤ Shellsage alias for help
-function help() {
-    if [[ -z "$VIRTUAL_ENV" || "$VIRTUAL_ENV" != *shellsage_env* ]]; then
-        source ~/Terminal_assistant/shellsage_env/bin/activate
-    fi
-
-    shellsage ask "$@"
-}
-
+#function help() {
+#    if [[ -z "$VIRTUAL_ENV" || "$VIRTUAL_ENV" != *shellsage_env* ]]; then
+#        source ~/Terminal_assistant/shellsage_env/bin/activate
+#    fi
+#
+#    shellsage ask "$@"
+#}
 
 # ➤ Display neofetch on startup
 neofetch
