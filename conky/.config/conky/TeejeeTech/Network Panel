@@ -54,8 +54,8 @@ color2 FFA300
 color3 grey
 
 TEXT
-${color2}Download ${color0}${alignr}${downspeedf enp12s0} KiB/s
+${color2}Download ${color0}${alignr}${execi 1 IF=enp12s0; RX1=$(cat /sys/class/net/$IF/statistics/rx_bytes); sleep 1; RX2=$(cat /sys/class/net/$IF/statistics/rx_bytes); awk "BEGIN {printf \"%.2f\", ($RX2-$RX1)*8/1000000}" | sed 's/\./,/'} MiB/s
 ${downspeedgraph enp12s0 80,}
-${color2}Upload ${color0}${alignr}${upspeedf enp12s0} KiB/s
+${color2}Upload ${color0}${alignr}${execi 1 IF=enp12s0; TX1=$(cat /sys/class/net/$IF/statistics/tx_bytes); sleep 1; TX2=$(cat /sys/class/net/$IF/statistics/tx_bytes); awk "BEGIN {printf \"%.2f\", ($TX2-$TX1)*8/1000000}" | sed 's/\./,/'} MiB/s
 ${upspeedgraph enp12s0 80,}
 ${color2}Local IP${color0}${alignr}${addr enp12s0}
