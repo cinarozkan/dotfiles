@@ -48,6 +48,8 @@ autoload -U compinit; compinit
 source /usr/share/zsh/plugins/fzf-tab-git/fzf-tab.plugin.zsh
 export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
 export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git --max-depth 1'
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_DEFAULT_COMMAND='fd --type f --threads 2'
 
 # ➤ Gelişmiş Kullanım Ayarları
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
@@ -75,7 +77,6 @@ export MOZ_ENABLE_WAYLAND=1
 export XDG_SESSION_TYPE=wayland
 
 # ➤ Aliaslar
-alias ZSH='source ~/.zshrc'
 alias la='ls -a'
 alias S=sudo
 alias pacman.conf='nano /etc/pacman.conf'
@@ -91,6 +92,8 @@ alias dolphin='dolphin .'
 alias nvidia-temp='nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader'
 alias update-count="~/dotfiles/conky/.config/conky/'Main Panel'/assets/check_updates.sh"
 alias history="fzf-history-widget"
+alias l="clear"
+alias pychoicer="python ~/PyChoicer/main.py"
 
 # ➤ Powerlevel10k quiet instant prompt
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
