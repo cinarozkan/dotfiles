@@ -53,6 +53,7 @@ export FZF_DEFAULT_COMMAND='fd --type f --threads 2'
 
 # ➤ Gelişmiş Kullanım Ayarları
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
+source <(fzf --zsh)
 
 # ➤ History
 HISTSIZE=1000000
@@ -94,7 +95,7 @@ alias update-count="~/dotfiles/conky/.config/conky/'Main Panel'/assets/check_upd
 alias history="fzf-history-widget"
 alias l="clear"
 alias pychoicer="python ~/PyChoicer/main.py"
-
+alias matrix="cmatrix"
 # ➤ Powerlevel10k quiet instant prompt
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 if command -v zoxide > /dev/null; then
