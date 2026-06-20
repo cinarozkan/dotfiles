@@ -1,11 +1,17 @@
 #!/bin/bash
 
-# Get the update count with yay (all the repos and aur)
-updates=$(yay -Sy --noconfirm > /dev/null 2>&1; yay -Qu | wc -l)
+if pgrep -x pacman >/dev/null; then
+    echo "pacman busy"
+    exit 0
+fi
 
-# Return string
-if [ "$updates" -eq 0 ]; then
-  echo "System is up to date"
+updates=$(checkupdates 2>/dev/null | wc -l)
+aur=$(yay -Qua 2>/dev/null | wc -l)
+
+total=$((updates + aur))
+
+if [ "$total" -eq 0 ]; then
+    echo "System is up to date"
 else
-  echo "$updates updates available"
+    echo "$total updates available"
 fi
