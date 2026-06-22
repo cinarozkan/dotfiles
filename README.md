@@ -10,6 +10,7 @@ All of my config files for my Arch Linux setup with KDE Plasma. This repository 
 - rofi
 - wallpapers
 - zsh
+- kvantum
 
 Clone the repository to `~/dotfiles` and run the `install-dotfiles.sh` script to automatically install all the dotfiles using GNU Stow.
 ```bash
