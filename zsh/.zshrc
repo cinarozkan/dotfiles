@@ -59,6 +59,7 @@ source <(fzf --zsh)
 HISTSIZE=1000000
 SAVEHIST=1000000
 HISTFILE=~/.zsh_history
+export EDITOR=nvim
 
 setopt EXTENDED_HISTORY
 setopt SHARE_HISTORY
@@ -86,7 +87,7 @@ alias cat='bat --paging=never'
 alias ls='eza -x --icons -a'
 alias nv=nvim
 alias calc='python3 -q'
-alias konsave='cd ~/KonUI && ./launch.sh'
+#alias konsave='cd ~/KonUI && ./launch.sh'
 alias q=exit
 alias shut='sudo poweroff'
 alias dolphin='dolphin .'
@@ -96,6 +97,8 @@ alias history="fzf-history-widget"
 alias l="clear"
 alias pychoicer="python ~/PyChoicer/main.py"
 alias matrix="cmatrix"
+alias cp=cpx
+
 # ➤ Powerlevel10k quiet instant prompt
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 if command -v zoxide > /dev/null; then
